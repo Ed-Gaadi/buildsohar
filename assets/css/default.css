@@ -712,3 +712,87 @@
 [data-overlay="9"]::before {
 	opacity: 0.9;
 }
+
+
+/* Base styles for the Construction Chemicals Detailed Section */
+.construction-chemicals-detailed {
+    background-color: #f4f4f4; /* Soft background color for the section */
+    padding: 80px 0;
+    font-family: 'Arial', sans-serif; /* Ensures text is legible and modern */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+}
+
+.category-box {
+    background-color: white;
+    border: none;
+    border-radius: 10px; /* Smooth, rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 25px;
+    width: 30%; /* Consistent width for each category */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    display: flex;
+    flex-direction: column; /* Organizes content in a column */
+}
+
+.category-box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover for a "lifting" effect */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
+.category-title {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allows the list to expand and fill the space */
+}
+
+.category-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.category-list li:hover {
+    background-color: #e9e9e9; /* Light grey background on hover */
+    color: #333; /* Darker text color for contrast */
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .category-box {
+        width: 45%; /* Adjusts to two boxes per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .category-box {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
