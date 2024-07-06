@@ -950,8 +950,19 @@
 	padding-right: 20px;
 }
 .scroll-top {
-	width: 35px;
-	height: 35px;
+	width: 45px;
+	height: 45px;
+	line-height: 35px;
+	right: 20px;
+	font-size: 15px;
+}
+.scroll-top.open {
+	bottom: 7%;
+}
+.float{
+	width: 45px;
+	height: 45px;
+	bottom: 2%;
 	line-height: 35px;
 	right: 20px;
 	font-size: 15px;
@@ -2088,8 +2099,6 @@
 .blog-details-area {
 	padding: 100px 0;
 }
-
-
 
 }
 

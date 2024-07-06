@@ -343,8 +343,8 @@ label {
 
 /* scrollUp */
 .scroll-top {
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	line-height: 50px;
 	position: fixed;
 	bottom: -10%;
@@ -360,7 +360,7 @@ label {
 	border: none;
 }
 .scroll-top.open {
-	bottom: 30px;
+	bottom: 12%;
 }
 .scroll-top::after {
 	position: absolute;
@@ -393,7 +393,7 @@ label {
 	height: auto;
 }
 .logo img {
-	max-width: 180px;
+	max-height: 80px;
 }
 .sticky-menu .logo.d-none {
 	display: block !important;
@@ -5589,5 +5589,130 @@ label {
     }
     100% {
         transform: scale(1,0);
+    }
+}
+
+
+
+
+.our-brands {
+    background-color: #f8f8f8;
+}
+
+.our-brands .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+
+.brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.brand-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.brand-box:hover {
+    transform: translateY(-5px);
+}
+
+.brand-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .brand-box {
+        width: 150px;
+        height: 90px;
+    }
+}
+
+.float {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 3%;
+	right: 50px;
+	border-radius: 6px;
+	background-color: #25d366;
+	color: #FFF;
+	text-align: center;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+  }
+  
+  .my-float {
+	font-size: 54px;
+  }
+  
+  .float:hover {
+	background-color: #128C7E;
+  }
+
+  .contact-info-wrap {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.contact-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: calc(50% - 10px);
+}
+
+.icon {
+    background-color: #ff6600;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content a, .content p {
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .contact-info-item {
+        width: 100%;
     }
 }
