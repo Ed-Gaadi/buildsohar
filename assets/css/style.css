@@ -1877,6 +1877,7 @@ label {
 .experiences-item:nth-child(2) {
 	bottom: -38px;
 	left: 145px;
+	width: 552px;
 }
 
 /* about-two */
@@ -5184,6 +5185,7 @@ label {
 	color: var(--tg-heading-font-color);
 }
 #contact-map {
+	margin-top: 25px;
 	height: 343px;
 	width: 100%;
 }
