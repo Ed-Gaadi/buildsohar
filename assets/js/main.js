@@ -26,28 +26,62 @@ if ($('.menu-area li.menu-item-has-children ul').length) {
 
 }
 
-//Mobile Nav Hide Show
-if ($('.mobile-menu').length) {
+(function ($) {
+    "use strict";
 
-	var mobileMenuContent = $('.menu-area .main-menu').html();
-	$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
+    // Run this function when the DOM is ready
+    $(document).ready(function() {
+        setupMobileMenu();
+    });
 
-	//Dropdown Button
-	$('.mobile-menu li.menu-item-has-children .dropdown-btn').on('click', function () {
-		$(this).toggleClass('open');
-		$(this).prev('ul').slideToggle(300);
-	});
-	//Menu Toggle Btn
-	$('.mobile-nav-toggler').on('click', function () {
-		$('body').addClass('mobile-menu-visible');
-	});
+    function setupMobileMenu() {
+        if ($('.mobile-menu').length) {
+            var $mobileMenuOuter = $('.mobile-menu .menu-box .menu-outer');
+            
+            // Function to create mobile menu
+            function createMobileMenu() {
+                // Clear existing content
+                $mobileMenuOuter.empty();
 
-	//Menu Toggle Btn
-	$('.menu-backdrop, .mobile-menu .close-btn').on('click', function () {
-		$('body').removeClass('mobile-menu-visible');
-	});
-}
+                // Clone the desktop menu
+                var $desktopMenu = $('.menu-area .main-menu > ul.navigation').clone();
 
+                // Modify the structure for mobile
+                $desktopMenu.find('li.menu-item-has-children').each(function() {
+                    var $this = $(this);
+                    $this.append('<div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>');
+                });
+
+                // Append the modified menu to mobile menu container
+                $mobileMenuOuter.append($desktopMenu);
+
+                // Remove any existing event listeners
+                $mobileMenuOuter.off('click', '.dropdown-btn');
+
+                // Dropdown Button functionality
+                $mobileMenuOuter.on('click', '.dropdown-btn', function(e) {
+                    e.preventDefault();
+                    $(this).toggleClass('open');
+                    $(this).siblings('ul.sub-menu').slideToggle(300);
+                });
+            }
+
+            // Create mobile menu
+            createMobileMenu();
+
+            // Menu Toggle Btn
+            $('.mobile-nav-toggler').off('click').on('click', function () {
+                $('body').addClass('mobile-menu-visible');
+            });
+
+            // Close Menu Btn
+            $('.menu-backdrop, .mobile-menu .close-btn').off('click').on('click', function () {
+                $('body').removeClass('mobile-menu-visible');
+            });
+        }
+    }
+
+})(jQuery);
 
 
 /*=============================================
